@@ -40,7 +40,7 @@ public class CCTV {
 	}
 
 	public CCTV() {
-		System.out.println(this.getClass().getSimpleName() + " object created");
+		System.out.println(this.getClass().getSimpleName() + " object created in no-org conn");
 
 	}
 
@@ -50,7 +50,7 @@ public class CCTV {
 		this.camerasize = camerasize;
 		this.price = price;
 		this.color = color;
-		System.out.println(this.getClass().getSimpleName() + " object created");
+		System.out.println(this.getClass().getSimpleName() + " object created in 4-parametarized");
 
 	}
 
@@ -58,7 +58,7 @@ public class CCTV {
 		super();
 		this.brand = brand;
 		this.camerasize = camerasize;
-		System.out.println(this.getClass().getSimpleName() + " object created");
+		System.out.println(this.getClass().getSimpleName() + " object created in 2-parametarized");
 
 	}
 

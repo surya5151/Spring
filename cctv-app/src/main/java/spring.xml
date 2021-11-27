@@ -4,4 +4,61 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
+	<bean class="com.xworkz.cctv.CCTV" id="cCCTV">
+
+		<constructor-arg name="brand" value="apple"></constructor-arg>
+		<constructor-arg name="camerasize" value="25"></constructor-arg>
+		<constructor-arg name="price" value="3000"></constructor-arg>
+		<constructor-arg name="color" value="White"></constructor-arg>
+
+		<property name="brand" value="Samsung"></property>
+		<property name="camerasize" value="12"></property>
+		<property name="price" value="2000"></property>
+		<property name="color" value="Block"></property>
+
+	</bean>
+
+	<bean class="java.lang.String" id="string"></bean>
+
+	<bean class="java.lang.Byte" id="byte">
+		<constructor-arg value="123"></constructor-arg>
+	</bean>
+
+	<bean class="java.lang.Short" id="short">
+		<constructor-arg value="12345"></constructor-arg>
+	</bean>
+
+	<bean class="java.lang.Integer" id="integer">
+		<constructor-arg value="1234567"></constructor-arg>
+	</bean>
+
+	<bean class="java.lang.Long" id="long">
+		<constructor-arg value="987655422"></constructor-arg>
+	</bean>
+
+	<bean class="java.lang.Double" id="double">
+		<constructor-arg value="5000.00"></constructor-arg>
+	</bean>
+	
+	<bean class="java.lang.Float" id="float">
+	<constructor-arg value="100000.00"></constructor-arg>
+	</bean>
+	
+	<bean class="java.lang.Character" id="character">
+	<constructor-arg value="@"></constructor-arg>
+	</bean>
+	
+	<bean class="java.lang.Boolean" id="boolean">
+		<constructor-arg value="true"></constructor-arg>
+	</bean>
+
+
+
+
+
+
+
+
+
+
 </beans>
