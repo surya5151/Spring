@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean class="com.xworkz.cctv.CCTV" id="cCCTV"> </bean>
+
+	<bean class="com.xworkz.cctv.Wallet" id="walletID">
+	<constructor-arg name="color" value="Block"></constructor-arg>
+	<constructor-arg name="brand" value="PUMA" ></constructor-arg>
+	<constructor-arg ref="materialID"></constructor-arg>
+	<constructor-arg ref="moneyID"></constructor-arg>
+	<constructor-arg ref="atmCardID"></constructor-arg>
+	<constructor-arg ref="photoID"></constructor-arg>
+	<constructor-arg name="price" value="500"></constructor-arg>	
+	</bean>
+	
+	<bean class="com.xworkz.cctv.Material" id="materialID"></bean>
+	<bean class="com.xworkz.cctv.Money" id="moneyID"></bean>
+	<bean class="com.xworkz.cctv.ATMCard" id="atmCardID"></bean>
+	<bean class="com.xworkz.cctv.Photo" id="photoID"></bean>
+
+
+
+
+
+
+
+</beans>
