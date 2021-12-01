@@ -20,15 +20,22 @@ public class Tester {
 		System.out.println(wallet.getColor());
 		System.out.println(wallet.getPrice());
 	
+//
+//		Wallet wallet2= new Wallet("blue", "kkkk", null, 400, null, null, null);
+//		System.out.println(wallet2.getBrand());
+//		System.out.println(wallet2.getColor());
+//		System.out.println(wallet2.getPrice());
+		
+		Material material = new Material();
+		System.out.println(material.getPrice());
+		
+		System.out.println("................................");
+		Material material2 = new Material(9.0, "jkdfsh", 3450.245f, 2000.00);
+		System.out.println(material2.getSize());
+		System.out.println(material2.getThickness());
+		System.out.println(material2.getType());
+		System.out.println(material2.getPrice());
 
-		Wallet wallet2= new Wallet("blue", "kkkk", null, 400, null, null, null);
-		System.out.println(wallet2.getBrand());
-		System.out.println(wallet2.getColor());
-		System.out.println(wallet2.getPrice());
-		
-		
-		
-		
 		
 //		Object object =springContiner.getBean("walletID");
 //		System.out.println(object.getClass().getSimpleName());
@@ -37,7 +44,14 @@ public class Tester {
 //		System.out.println(wallet2.getClass().getSimpleName());
 		
 	
+		Wallet wallet2 = springContiner.getBean(Wallet.class);
+		System.out.println(wallet2);
 		
+		Wallet wallet3 = springContiner.getBean(Wallet.class);
+		System.out.println(wallet3);
+		
+		Wallet wallet4 = springContiner.getBean(Wallet.class);
+		System.out.println(wallet4);
 		
 
 	}

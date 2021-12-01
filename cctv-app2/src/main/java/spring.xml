@@ -4,18 +4,21 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean class="com.xworkz.cctv.CCTV" id="cCCTV"> </bean>
-
-	<bean class="com.xworkz.cctv.Wallet" id="walletID">
-	<constructor-arg name="color" value="Block"></constructor-arg>
-	<constructor-arg name="brand" value="PUMA" ></constructor-arg>
-	<constructor-arg ref="materialID"></constructor-arg>
-	<constructor-arg ref="moneyID"></constructor-arg>
-	<constructor-arg ref="atmCardID"></constructor-arg>
-	<constructor-arg ref="photoID"></constructor-arg>
-	<constructor-arg name="price" value="500"></constructor-arg>	
+	<bean class="com.xworkz.cctv.CCTV" id="cCCTV">
 	</bean>
-	
+
+
+
+	<bean class="com.xworkz.cctv.Wallet" id="walletID" scope="prototype">
+		<property name="color" value="ss"></property>
+		<property name="brand" value="C_ONE"></property>
+		<property name="material" ref="materialID"></property>
+		<property name="money" ref="moneyID"></property>
+		<property name="atmCard" ref="atmCardID"></property>
+		<property name="photo" ref="photoID"></property>
+		<property name="price" value="234"></property>
+	</bean>
+
 	<bean class="com.xworkz.cctv.Material" id="materialID"></bean>
 	<bean class="com.xworkz.cctv.Money" id="moneyID"></bean>
 	<bean class="com.xworkz.cctv.ATMCard" id="atmCardID"></bean>

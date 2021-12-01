@@ -3,7 +3,7 @@ package com.xworkz.cctv;
 public class Wallet {
 
 	private String color;
-	private String brand;
+	private BRAND brand;
 	private Material material;
 	private double price;
 	private Money money;
@@ -16,7 +16,7 @@ public class Wallet {
 
 	}
 
-	public Wallet(String color, String brand, Material material, double price, Money money, ATMCard atmCard,
+	public Wallet(String color, BRAND brand, Material material, double price, Money money, ATMCard atmCard,
 			Photo photo) {
 		super();
 		this.color = color;
@@ -36,11 +36,11 @@ public class Wallet {
 		this.color = color;
 	}
 
-	public String getBrand() {
+	public BRAND getBrand() {
 		return brand;
 	}
 
-	public void setBrand(String brand) {
+	public void setBrand(BRAND brand) {
 		this.brand = brand;
 	}
 
