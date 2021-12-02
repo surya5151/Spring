@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+		id="PropertyPlaceholderConfigurer">
+		<property name="locations" value="allClass.properties"></property>
+	</bean>
+
+
+	<bean class="com.xworkz.cctv.CCTV" id="cCCTV">
+		<constructor-arg value="${cc1}"></constructor-arg>
+		<constructor-arg value="${cc2}"></constructor-arg>
+		<constructor-arg value="${cc3}"></constructor-arg>
+		<constructor-arg value="${cc4}"></constructor-arg>
+	</bean>
+
+	<bean class="com.xworkz.cctv.Wallet" id="walletID"
+		scope="prototype">
+		<property name="color" value="${w1}"></property>
+		<property name="brand" value="${w2}"></property>
+		<property name="material" ref="${w3}"></property>
+		<property name="price" value="${w4}"></property>
+		<property name="money" ref="${w5}"></property>
+		<property name="atmCard" ref="${w6}"></property>
+		<property name="photo" ref="${w7}"></property>
+	</bean>
+
+	<bean class="com.xworkz.cctv.Material" id="materialID">
+		<property name="size" value="${mt1}"></property>
+		<property name="type" value="${mt2}"></property>
+		<property name="thickness" value="${mt3}"></property>
+		<property name="price" value="${mt4}"></property>
+	</bean>
+
+	<bean class="com.xworkz.cctv.Money" id="moneyID">
+		<constructor-arg value="${mo1}"></constructor-arg>
+		<constructor-arg value="${mo2}"></constructor-arg>
+		<constructor-arg value="${mo3}"></constructor-arg>
+		<constructor-arg value="${mo4}"></constructor-arg>
+	</bean>
+
+	<bean class="com.xworkz.cctv.ATMCard" id="atmCardID">
+
+	</bean>
+
+	<bean class="com.xworkz.cctv.Photo" id="photoID">
+		<property name="size" value="${p1}"></property>
+		<property name="price" value="${p2}"></property>
+	</bean>
+
+	<bean class="com.xworkz.cctv.Connection" id="connection">
+		<property name="url" value="${url}"></property>
+		<property name="userName" value="${userName}"></property>
+		<property name="password" value="${passWord}"></property>
+
+	</bean>
+
+
+</beans>
