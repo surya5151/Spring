@@ -5,10 +5,10 @@
            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 	<bean
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
-		id="PropertyPlaceholderConfigurer">
-		<property name="locations" value="allClass.properties"></property>
-	</bean>
+	class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+	id="PropertyPlaceholderConfigurer">
+	<property name="locations" value="allClass.properties"></property>
+</bean>
 
 
 	<bean class="com.xworkz.cctv.CCTV" id="cCCTV">
