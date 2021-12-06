@@ -6,7 +6,7 @@ public class Tester {
 
 	public static void main(String[] args) {
 
-		String springConfgFile = "springWalet.xml";
+		String springConfgFile = "applicationContext.xml";
 
 		ClassPathXmlApplicationContext springContiner = new ClassPathXmlApplicationContext(springConfgFile);
 
@@ -26,6 +26,9 @@ public class Tester {
 
 		Photo photo = springContiner.getBean(Photo.class);
 		System.out.println(photo);
+		
+		
+		springContiner.close();
 
 	}
 

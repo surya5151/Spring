@@ -33,7 +33,7 @@ public class Walet {
 				+ money + ", atmCard=" + atmCard + ", photo=" + photo + "]";
 	}
 
-	public Walet(@Value("kdh") String color, BRAND brand, Material material, double price, Money money, ATMCard atmCard,
+	public Walet(@Value("block") String color, BRAND brand, Material material, double price, Money money, ATMCard atmCard,
 			Photo photo) {
 		super();
 		this.color = color;
