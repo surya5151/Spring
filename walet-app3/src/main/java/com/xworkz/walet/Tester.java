@@ -17,7 +17,7 @@ public class Tester {
 		ApplicationContext springContiner = new ClassPathXmlApplicationContext(springConfgFile);
 
 		TvRemoteEntity tvRemoteEntity = new TvRemoteEntity();
-		tvRemoteEntity.setName("samsung2");
+		tvRemoteEntity.setName("LG");
 		tvRemoteEntity.setColor("block");
 		tvRemoteEntity.setPrice(1000);
 		tvRemoteEntity.setNoOfCells(2);
