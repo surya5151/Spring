@@ -6,7 +6,10 @@ public interface TvRemoteService {
 	
 	boolean validateTvRemoteEntity(TvRemoteEntity tvRemoteEntity);
 	
-	boolean updateTvRemotePriceByID();
+	boolean getColorByID(int tvRemoteID);
+
+	
+	//boolean updateTvRemotePriceByID(int tvRemote, double price);
 	
 	
 }

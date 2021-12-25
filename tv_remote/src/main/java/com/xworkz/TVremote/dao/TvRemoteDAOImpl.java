@@ -17,19 +17,21 @@ import com.xworkz.TVremote.entity.TvRemoteEntity;
 @Component
 public class TvRemoteDAOImpl implements TvRemoteDAO {
 
-@Autowired
+	@Autowired
 	private SessionFactory sessionFactory;
 
 	public TvRemoteDAOImpl() {
-		System.out.println(this.getClass().getSimpleName() +" object created....");
+		System.out.println(this.getClass().getSimpleName() + " object created....");
 	}
-	
+
 	@Override
 	public void addTvRemoteEntity(TvRemoteEntity tvRemoteEntity) {
 		System.out.println("invoked addTvRemoteEntity()");
 		Session session = null;
+		Transaction transaction = null;
 		try {
-			//SessionFactory sessionFactory = new Configuration().configure("hibernet.cfg.xml").buildSessionFactory();
+			// SessionFactory sessionFactory = new
+			// Configuration().configure("hibernet.cfg.xml").buildSessionFactory();
 
 			session = sessionFactory.openSession();
 			session.beginTransaction();
@@ -54,34 +56,63 @@ public class TvRemoteDAOImpl implements TvRemoteDAO {
 	}
 
 	@Override
-	public void updateTvRemotePriceByID() {
-		System.out.println("invoked updateTvRemoteEntity()");
+	public String getColorByID(int tvRemoteID) {
 		Session session = null;
+		String color = null;
 		try {
-			//SessionFactory sessionFactory = new Configuration().configure("hibernet.cfg.xml").buildSessionFactory();
-
 			session = sessionFactory.openSession();
-			session.beginTransaction();
-			String hqlQuery = "update tvremote.tv_remote set PRICE='300' where TVREMOTE_ID=1";
-			
+			String hqlQuery = "SELECT COLOR FROM tvremote.tv_remote WHERE TVREMOTE_ID=?";
 			Query query = session.createQuery(hqlQuery);
-			int noOfRowsEfected = query.executeUpdate();
-			
-			session.getTransaction().commit();
-			System.out.println("noOfRowsEfected "+noOfRowsEfected);
-
-		} catch (HibernateException e) {
-			session.getTransaction().rollback();
-			System.out.println("Transction is filed... rool back.!!!");
-
+			color = (String) query.uniqueResult();
+		} catch (HibernateException exp) {
+			System.out.println(exp.getMessage());
 		} finally {
 			if (session != null) {
 				session.close();
-				System.out.println("Session is closed");
-
+				System.out.println("session closed");
 			} else {
-				System.out.println("Session is not closed");
+				System.out.println("session not closed");
 			}
-		}		
-	}		
+
+		}
+		return color;
+	}
+
+	
+
+	
+	
+	
+	
+	
+	
+//	@Override
+//	public void updateTvRemotePriceByID(int tvRemote, double price) {
+//		System.out.println("invoked updateTvRemoteEntity().......");
+//		Session session = null;
+//		try {
+//
+//			session = sessionFactory.openSession();
+//			session.beginTransaction();
+//			String hqlQuery = "update tvremote.tv_remote set PRICE=? where TVREMOTE_ID=?";			
+//			Query query = session.update(TvRemoteEntity);
+//			int noOfRowsEfected = query.executeUpdate();		
+//			System.out.println("noOfRowsEfected " + noOfRowsEfected);
+//
+//			session.getTransaction().commit();
+//
+//		} catch (HibernateException e) {
+//			session.getTransaction().rollback();
+//			System.out.println("Transction is filed... rool back.!!!");
+//
+//		} finally {
+//			if (session != null) {
+//				session.close();
+//				System.out.println("Session is closed");
+//
+//			} else {
+//				System.out.println("Session is not closed");
+//			}
+//		}
+//	}
 }

@@ -16,22 +16,37 @@ public class Tester {
 		ApplicationContext springContiner = new ClassPathXmlApplicationContext(springConfgFile);
 
 		TvRemoteEntity tvRemoteEntity = new TvRemoteEntity();
-		tvRemoteEntity.setName("apple2");
+		tvRemoteEntity.setTvRemoteID(5);
 		tvRemoteEntity.setColor("White");
-		tvRemoteEntity.setPrice(100);
+		tvRemoteEntity.setPowerButtonWorking(true);
+		tvRemoteEntity.setName("samsung");
 		tvRemoteEntity.setNoOfCells(3);
-		tvRemoteEntity.setPowerButtonWorking(true); 
+		tvRemoteEntity.setPrice(100);
 
 		TvRemoteService tvRemoteService = springContiner.getBean(TvRemoteService.class);
-		//boolean result = tvRemoteService.validateTvRemoteEntity(tvRemoteEntity);
-		boolean updateTvRemoteEntity = tvRemoteService.updateTvRemotePriceByID();
-		
- 
-		if (updateTvRemoteEntity) {
-			System.out.println("Data is saved");
 
-		} else {
-			System.out.println("Data is not saved..");
+		// write a validation in service impl
+
+//		boolean result = tvRemoteService.validateTvRemoteEntity(tvRemoteEntity);
+//
+//		if (result) {
+//			System.out.println("Data is saved");
+//
+//		} else {
+//			System.out.println("Data is not saved..");
+//		}
+
+		
+		
+		// written validations in serviceimpl i.e to check color is empty or null
+
+		boolean color = tvRemoteService.getColorByID(5);
+		
+		if(color) {
+			System.out.println("color fetched");
+		}else {
+			System.out.println("Color is either  null or empty");
+
 		}
 
 		ClassPathXmlApplicationContext classPathXmlApplicationContext = (ClassPathXmlApplicationContext) springContiner;

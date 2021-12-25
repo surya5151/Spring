@@ -49,7 +49,7 @@ public class TvRemoteServiceImpl implements TvRemoteService {
 			System.out.println("Price should be gater then zero");
 			return flag;
 		}
-		if (tvRemoteEntity.getNoOfCells()> 2) {
+		if (tvRemoteEntity.getNoOfCells() > 2) {
 			flag = true;
 
 		} else {
@@ -80,11 +80,42 @@ public class TvRemoteServiceImpl implements TvRemoteService {
 	}
 
 	@Override
-	public boolean updateTvRemotePriceByID() {
-		System.out.println("invoked validateTvRemoteEntity");
+	public boolean getColorByID(int tvRemoteID) {
+		String color = tvRemoteDAO.getColorByID(1);
+
+		// String color = tvremote.getColorById(1);
+		if (!color.isBlank() && !color.isEmpty() && color != null) {
+			System.out.println("color is " + color);
+			return true;
+		}
 		return false;
 
-			}
+	}
 
-	
 }
+
+//	@Override
+//	public boolean updateTvRemotePriceByID(int tvRemote, double price) {
+//		boolean flag = false;
+//		
+//		if (price>=0) {
+//			flag = true;
+//			System.out.println("price data updated sucesfully...");
+//
+//		} else {
+//			flag = false;
+//			System.out.println("Price should be gater then zero");
+//			return flag;
+//		}
+//				
+//		if (flag) {
+//
+//			System.out.println("All data valadating");
+//			this.tvRemoteDAO.updateTvRemotePriceByID(tvRemote, price);
+//			
+//			return flag;
+//		} else {
+//			System.out.println("Invalide date.... try once.......");
+//			return flag;
+//		}
+//}

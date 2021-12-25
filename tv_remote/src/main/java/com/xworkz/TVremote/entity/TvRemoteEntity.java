@@ -7,42 +7,73 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name = "tv_remote")
+@Table(name = "tv_remote ")
 public class TvRemoteEntity implements java.io.Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="TVREMOTE_ID")
-	private int tvRemote;
-	@Column(name = "NAME")
-	private String name;
+//	@GeneratedValue(strategy = GenerationType.AUTO)
+
+	@Column(name = "TVREMOTE_ID")
+	private int tvRemoteID;
+
 	@Column(name = "COLOR")
 	private String color;
-	@Column(name = "PRICE")
-	private double price;
-	@Column(name = "NO_OF_CELLS")
-	private int noOfCells;
+
 	@Column(name = "IS_POWER_BUTTON_WORKING")
 	private boolean isPowerButtonWorking;
-	
+
+	@Column(name = "NAME")
+	private String name;
+
+	@Column(name = "NO_OF_CELLS")
+	private int noOfCells;
+
+	@Column(name = "PRICE")
+	private double price;
+
 	public TvRemoteEntity() {
 		System.out.println("invoked no-org cons from TvRemoteEntity()");
 	}
 
 	@Override
 	public String toString() {
-		return "TvRemoteEntity [name=" + name + ", color=" + color + ", price=" + price + ", noOfCells=" + noOfCells
-				+ ", isPowerButtonWorking=" + isPowerButtonWorking + "]";
+		return "TvRemoteEntity [tvRemote=" + tvRemoteID + ", color=" + color + ", isPowerButtonWorking="
+				+ isPowerButtonWorking + ", name=" + name + ", noOfCells=" + noOfCells + ", price=" + price + "]";
 	}
 
-	public TvRemoteEntity(String name, String color, double price, int noOfCells, boolean isPowerButtonWorking) {
+	public TvRemoteEntity(int tvRemote, String color, boolean isPowerButtonWorking, String name, int noOfCells,
+			double price) {
 		super();
-		this.name = name;
+		this.tvRemoteID = tvRemote;
 		this.color = color;
-		this.price = price;
+		this.isPowerButtonWorking = isPowerButtonWorking;
+		this.name = name;
 		this.noOfCells = noOfCells;
+		this.price = price;
+	}
+
+	public int getTvRemote() {
+		return tvRemoteID;
+	}
+
+	public void setTvRemoteID(int tvRemote) {
+		this.tvRemoteID = tvRemote;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public boolean isPowerButtonWorking() {
+		return isPowerButtonWorking;
+	}
+
+	public void setPowerButtonWorking(boolean isPowerButtonWorking) {
 		this.isPowerButtonWorking = isPowerButtonWorking;
 	}
 
@@ -54,12 +85,12 @@ public class TvRemoteEntity implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public String getColor() {
-		return color;
+	public int getNoOfCells() {
+		return noOfCells;
 	}
 
-	public void setColor(String color) {
-		this.color = color;
+	public void setNoOfCells(int noOfCells) {
+		this.noOfCells = noOfCells;
 	}
 
 	public double getPrice() {
@@ -70,22 +101,4 @@ public class TvRemoteEntity implements java.io.Serializable {
 		this.price = price;
 	}
 
-	public int getNoOfCells() {
-		return noOfCells;
-	}
-
-	public void setNoOfCells(int noOfCells) {
-		this.noOfCells = noOfCells;
-	}
-
-	public boolean isPowerButtonWorking() {
-		return isPowerButtonWorking;
-	}
-
-	public void setPowerButtonWorking(boolean isPowerButtonWorking) {
-		this.isPowerButtonWorking = isPowerButtonWorking;
-	}
-
-	
-	
 }
