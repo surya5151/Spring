@@ -30,8 +30,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Surya/.m2/repository/mysql/mysql-connector-java/8.0.21/mysql-connector-java-8.0.21.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Surya/.m2/repository/mysql/mysql-connector-java/8.0.21/mysql-connector-java-8.0.21-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Surya/.m2/repository/org/hibernate/hibernate-core/5.3.20.Final/hibernate-core-5.3.20.Final.jar" sourcepath="C:/Users/Surya/.m2/repository/org/hibernate/hibernate-core/5.3.20.Final/hibernate-core-5.3.20.Final-sources.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
@@ -42,5 +40,6 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Surya/.m2/repository/mysql/mysql-connector-java/8.0.21/mysql-connector-java-8.0.21.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
